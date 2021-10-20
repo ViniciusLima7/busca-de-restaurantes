@@ -6,7 +6,7 @@ import MaterialIcon from '@material/react-material-icon';
 import logo from '../../assets/logo.svg';
 import restaurante from '../../assets/restaurante-fake.png';
 // import Slider from 'react-slick';
-import { Card } from '../../components';
+import { Card, RestaurantCard } from '../../components';
 
 
 
@@ -49,10 +49,11 @@ const Home = () => {
                         <Card photo={restaurante} title="FOTOS TESTE" />
                         <Card photo={restaurante} title="FOTOS TESTE" />
                         <Card photo={restaurante} title="FOTOS TESTE" />
-
-
                     </Carousel>
                 </Search>
+                <RestaurantCard>
+
+                </RestaurantCard>
             </Container>
             <Map />
 
