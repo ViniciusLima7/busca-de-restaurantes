@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { Container, Search, Logo, Wrapper, CarouselTitle, Carousel } from './styles'
 import TextField, { Input } from '@material/react-text-field';
@@ -15,6 +16,8 @@ const Home = () => {
     const [inputValue, setInputValue] = useState('');
     const [modalOpened, setModalOpened] = useState(false);
     const [query, setQuery] = useState(null);
+    const { restaurants } = useSelector((state) => state.restaurants);
+
 
     // Configurações do Slider
     const settings = {
@@ -48,26 +51,23 @@ const Home = () => {
                     </TextField>
                     <CarouselTitle>Na sua Area</CarouselTitle>
                     <Carousel {...settings}>
-                        <Card photo={restaurante} title="FOTOS TESTE" />
-                        <Card photo={restaurante} title="FOTOS TESTE" />
-                        <Card photo={restaurante} title="FOTOS TESTE" />
-                        <Card photo={restaurante} title="FOTOS TESTE" />
-                        <Card photo={restaurante} title="FOTOS TESTE" />
-                        <Card photo={restaurante} title="FOTOS TESTE" />
-                        <Card photo={restaurante} title="FOTOS TESTE" />
-                        <Card photo={restaurante} title="FOTOS TESTE" />
-                        <Card photo={restaurante} title="FOTOS TESTE" />
-                        <Card photo={restaurante} title="FOTOS TESTE" />
+                        {restaurants.map((restaurant) =>
+                            <Card
+                                key={restaurant.place_id}
+                                photo={restaurant.photos ? restaurant.photos[0].getUrl() : restaurante}
+                                title={restaurant.name}
+                            />
+                        )}
                     </Carousel>
                 </Search>
-                <RestaurantCard>
-
-                </RestaurantCard>
+                {restaurants.map((restaurant) =>
+                    <RestaurantCard restaurant={restaurant} />
+                )}
                 <button onClick={() => setModalOpened(true)}>Abrir Modal</button>
             </Container>
             <Map query={query} />
 
-            <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)} />
+            {/* <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)} /> */}
 
         </Wrapper>
     );

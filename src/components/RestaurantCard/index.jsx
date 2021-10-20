@@ -3,15 +3,15 @@ import { Restaurant, RestaurantAddress, RestaurantInfo, RestaurantPhoto, Restaur
 import ReactStars from "react-rating-stars-component";
 import restaurante from '../../assets/restaurante-fake.png';
 
-const RetaurantCard = () => {
+const RetaurantCard = ({ restaurant }) => {
     return (
         <Restaurant>
             <RestaurantInfo>
-                <RestaurantTitle>Nome do Restaurante</RestaurantTitle>
-                <ReactStars count={5} isHalf={true} value={4} edit={false} activeColor="#e7711c"></ReactStars>
-                <RestaurantAddress>Rua Rio Vermelho, 13</RestaurantAddress>
+                <RestaurantTitle>{restaurant.name}</RestaurantTitle>
+                <ReactStars count={5} isHalf={true} value={restaurant.rating} edit={false} activeColor="#e7711c"></ReactStars>
+                <RestaurantAddress>{restaurant.vicinity || restaurant.formatted_address}</RestaurantAddress>
             </RestaurantInfo>
-            <RestaurantPhoto src={restaurante} alt="Foto do Restaurante" />
+            <RestaurantPhoto src={restaurant.photos ? restaurant.photos[0].getUrl() : restaurante} alt="Foto do Restaurante" />
         </Restaurant>
     );
 }
