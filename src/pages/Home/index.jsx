@@ -6,13 +6,14 @@ import MaterialIcon from '@material/react-material-icon';
 import logo from '../../assets/logo.svg';
 import restaurante from '../../assets/restaurante-fake.png';
 // import Slider from 'react-slick';
-import { Card, RestaurantCard } from '../../components';
+import { Card, Modal, RestaurantCard } from '../../components';
 
 
 
 const Home = () => {
 
     const [inputValue, setInputValue] = useState('');
+    const [modalOpened, setModalOpened] = useState(false);
 
     // Configurações do Slider
     const settings = {
@@ -54,9 +55,11 @@ const Home = () => {
                 <RestaurantCard>
 
                 </RestaurantCard>
+                <button onClick={() => setModalOpened(true)}>Abrir Modal</button>
             </Container>
             <Map />
 
+            <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)} />
 
         </Wrapper>
     );
