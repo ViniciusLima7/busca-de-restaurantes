@@ -35,5 +35,5 @@ Aqui você encontrará todos os Componentes, Tecnologias, APIS e bibliotecas Uti
 ## Projeto
 
 <h1 align="center">
-    <img alt="CRENTEFLIZ" title="Projeto" src="https://github.com/ViniciusLima7/crenteflix/blob/master/img/github.png" />
+    <img alt="Busca de Restaurantes" title="Projeto Restaurante" src="https://github.com/ViniciusLima7/busca-de-restaurantes/blob/master/img/projeto.png" />
 </h1>
