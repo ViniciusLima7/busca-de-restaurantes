@@ -19,4 +19,5 @@ export const LoadingSkeleton = styled.div`
   animation: ${keyFrameLoading} 500ms infinite alternate;
 `;
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default ({ width, height }) => <LoadingSkeleton width={width} height={height} />;
