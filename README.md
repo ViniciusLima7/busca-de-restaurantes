@@ -37,3 +37,7 @@ Aqui você encontrará todos os Componentes, Tecnologias, APIS e bibliotecas Uti
 <h1 align="center">
     <img alt="Busca de Restaurantes" title="Projeto Restaurante" src="https://github.com/ViniciusLima7/busca-de-restaurantes/blob/master/src/assets/projeto.png" />
 </h1>
+
+### Funcionamento da Busca
+
+Para funcionar você deve criar uma conta de faturamento na google cloud maps
