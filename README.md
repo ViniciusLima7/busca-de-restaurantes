@@ -30,6 +30,7 @@ Aqui você encontrará todos os Componentes, Tecnologias, APIS e bibliotecas Uti
 - styled-components
 - redux
 - react-redux
+- react-lottie
 
 ## Projeto
 
